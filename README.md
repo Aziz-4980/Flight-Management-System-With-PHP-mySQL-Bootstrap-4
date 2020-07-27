@@ -1,4 +1,4 @@
-his is a Flight Management System made in Bootstrap 4, PHP and , MySQL. This was a project assigned to me by by Professor!
+This is a Flight Management System made in Bootstrap 4, PHP and , MySQL. This was a project assigned to me by by Professor!
 
 to get started:
 

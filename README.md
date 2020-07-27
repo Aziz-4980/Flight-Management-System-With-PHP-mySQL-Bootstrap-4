@@ -17,5 +17,5 @@ feel free to play with the code!!
 happy coding
 
 github: https://github.com/aziz4980
-insta: https://instagram.com/abdul.aziz.khan.official
+
 

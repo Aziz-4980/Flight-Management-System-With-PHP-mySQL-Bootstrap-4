@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <title>Flight management system</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm  fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand"> <a class="navbar-brand mr-auto" href="./index.html"><img src="img/logo.png"
+                        height="30" width="41"></a></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item "><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
+                            Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-info fa-lg"></span>
+                            About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./admin.html"><span class="fa fa-list fa-lg"></span> Admin</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span
+                                class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>Your Own Flight Management System</h1>
+                    <p>We take inspiration from the World's best airliners and with our experience presents to you the
+                        most reliable flight management system</p>
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <img src="img/logo.png" class="img-fluid">
+
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12">
+                <h3>About Us</h3>
+                <hr>
+            </div>
+        </div>
+        <ol class="col-12 breadcrumb">
+            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+            <li class="breadcrumb-item active">About us</li>
+        </ol>
+
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <h2>Our Mission</h2>
+                <p>is to provide a conducive environment for the highly motivated and well-trained individuals who take
+                    enjoy their work and provide personalized client services, exceeding expectations !
+
+                    Our high standards of business ethics are instilled in each and every FML staff, and are delivered
+                    through the services we render for our clients and partners.
+
+                    Safety is our major concern, and we have accomplished this through innovation and by keeping up with
+                    updated technology.</p>
+               
+            </div>
+            <div class="col-12 col-sm-6">
+                <h2>Our Vision</h2>
+                <p>Our long-term vision is to be leading aviation expert on ground worldwide, offering <em>the best
+                        aviation services to our clients worldwide.</em> We see ourselves to be the preferred choice to
+                    provide all your flight needs.</p> 
+            </div>
+        </div>
+        <hr>
+
+       
+            <div class="row row-content ">
+
+                <div class="col-12 col-md-6">
+                    <div>
+                        <h3>Get Flight Detail !!</h3>
+                    </div>
+                    <form method="POST" action="searchFlights.php">
+                         <div class="row form-group">
+                            <label for="departure" class="col-12 col-md-4 col-form-label">Travelling From</label>
+                            <div class="col-10  col-md-8">
+                                <input type="radio" name="from" value="Karachi"><b>&nbspKarachi</b>
+                                <input type="radio" name="from" value="Lahore"><b>&nbspLahore</b>
+                                <input type="radio" name="from" value="Islamabad"><b>&nbspislamabad</b>
+
+
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="departure" class="col-12 col-md-4 col-form-label">Travelling To</label>
+                            <div class="col-10  col-md-8">
+                                <input type="radio" name="too" value="Karachi"><b>&nbspKarachi</b>
+                                <input type="radio" name="too" value="Lahore"><b>&nbspLahore</b>
+                                <input type="radio" name="too" value="Islamabad"><b>&nbspislamabad</b>
+
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 ">
+                            <button type="submit" id="searchFlight" value="submit" name="searchFlight" class="btn btn-success"
+                                onclick="searchFlight()">Search Flight</button>
+    
+                        </div>
+                    </form>
+                    
+                </div>
+        
+                <div class="col-12 col-md-6 ">
+                    <h3>Currently Functional Airports</h3>
+                    <iframe src="./retrieveAirports.php" title="Details" width="100%" height="100%"
+                                frameBorder="0"></iframe>
+                </div>
+        
+            </div>
+
+            <!-- <div class="row row-content ">
+
+                <div class="col-12 col-md-6">
+                    <div>
+                        <h3>View Your Profile Information</h3>
+                    </div>
+                    <form method="POST" action="profileInfo.php">
+                        <div class="row form-group">
+                            <label for="forEmail" class="clo-12 col-md-4">
+                                <b>Enter Your Email</b>
+                            </label>
+                            <div class="col-12 col-md-5">
+                                <input type="email" class="form-control " id="search" name="email">
+                            </div>
+                            <div class="col-12 col-md-1">
+                                <button type="submit" id="searchBtn" value="submit" name="profileinfo" class="btn btn-info
+                                    onclick="profileInfo()">Profile </button>
+        
+                            </div>
+                        </div>
+        
+        
+        
+                    </form>
+        
+                </div>
+        
+                 <div class="col-12 col-md-5 ">
+                    <div>
+                        <h3>Delete Your Profile</h3>
+                    </div>
+                    <form method="POST" action="deleteProfile.php">
+                        <div class="row form-group">
+                            <label for="forEmail" class="clo-12 col-md-4">
+                                <b>Enter Your Email</b>
+                            </label>
+                            <div class="col-12 col-md-5">
+                                <input type="email" class="form-control " id="delete" name="email">
+                            </div>
+                            <div class="col-12 col-md-1">
+                                <button type="submit" id="deleteBtn" value="submit" name="deleteprofile" class="btn btn-warning"
+                                    onclick="deleteProfile()">Delete </button>
+        
+                            </div>
+                        </div>
+        
+        
+        
+                    </form>
+        
+                </div> -->       
+            </div> 
+
+        
+</body>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 offset-1 col-sm-2">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="./admin.html">Admin</a></li>
+                    <li><a href="./contactus.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-7 col-sm-5">
+                <h5>Our Address</h5>
+                <address>
+                    396i Masjid Road<br>
+                    Sialkot, Cantt<br>
+                    PAKISTAN<br>
+                    <i class="fa fa-phone fa-lg"></i>: +92 3348129506<br>
+                    <i class="fa fa-fax fa-lg"></i>: +92 3348129507<br>
+                    <i class="fa fa-envelope fa-lg"></i>:
+                    <a href="mailto:abdul.aziz.khan.1122@gmail.com">abdul.aziz.khan.1122@gmail.com</a>
+                </address>
+            </div>
+            <div class="col-12 col-sm-4 align-self-center">
+                <div class="text-center">
+                    <a class="btn btn-social-icon btn-google" href="http://google.com/abdul.aziz.khan"><i
+                            class="fa fa-google-plus"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/abdulaziz.khan.9040"><i
+                            class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-linkedin"
+                        href="http://www.linkedin.com/abdul.aziz.khan.official"><i class="fa fa-linkedin"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/aziz_4980"><i
+                            class="fa fa-twitter"></i></a>
+                    <a class="btn btn-social-icon btn-google"
+                        href="https://www.youtube.com/channel/UCViViYLQ3HwxKOCYm8MCTQw"><i
+                            class="fa fa-youtube"></i></a>
+                    <a class="btn btn-social-icon" href="mailto:abdul.aziz.khan.1122@gmail.com"><i
+                            class="fa fa-envelope-o"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <p>© Copyright 2020 Abdul Aziz Khan</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- build:js js/main.js -->
+<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<!-- endbuild -->
+
+<script>
+    function searchFlight() {
+        alert("The Flights against these locations will be fetched!!!!");
+    }
+</script>
+
+</body>
+
+</html>

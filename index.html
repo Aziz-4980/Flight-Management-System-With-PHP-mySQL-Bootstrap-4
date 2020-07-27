@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
+    <title>Ristorante Con Fusion</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm  fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#"> <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png"
+                        height="30" width="41"></a></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item  active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span>
+                            Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span
+                                class="fa fa-info fa-lg"></span> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./admin.html"><span class="fa fa-list fa-lg"></span>
+                            Admin</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span
+                                class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+               
+            </div>
+        </div>
+    </nav>
+   
+
+
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>Your Own Flight Management System</h1>
+                    <p>We take inspiration from the World's best airliners and with our experience presents to you the
+                        most reliable flight management system</p>
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <img src="img/logo.png" class="img-fluid">
+
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <a role="button" class="btn btn-block nav-link btn-warning btn-sm " id="reserve">Reserve Seat(s)</a>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </header>
+
+
+    <div id="reserveModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve Seats</h4>
+                    <button type="button" class="close" data-dismiss="modal" id="modal-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="reserve.php">
+
+                        <div class="row form-group">
+                            <label for="name" class="col-12 col-md-4 col-form-label"><b>First Name</b></label>
+                            <div class="col-10 col-md-8">
+                                <input type="text" name="firstName" class="form-control" id="fName"
+                                    placeholder="First Name">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="name" class="col-12 col-md-4 col-form-label"><b>Last Name</b></label>
+                            <div class="col-10 col-md-8">
+                                <input type="text" name="lastName" class="form-control" id="lName"
+                                    placeholder="Last Name">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="email" class="col-12 col-md-4 col-form-label"><b>Email</b></label>
+                            <div class="col-10 col-md-8">
+                                <input type="email" class="form-control" name="email" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter email">
+
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="departure" class="col-12 col-md-4 col-form-label"><b>Travelling From
+                                </b></label>
+                            <div class="col-10  col-md-8">
+                                <input type="radio" name="from" value="Karachi"><b>&nbspKarachi</b>
+                                <input type="radio" name="from" value="Lahore"><b>&nbspLahore</b>
+                                <input type="radio" name="from" value="Islamabad"><b>&nbspislamabad</b>
+
+
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="departure" class="col-12 col-md-4 col-form-label"><b>Travelling To
+                                </b></label>
+                            <div class="col-10  col-md-8">
+                                <input type="radio" name="too" value="Karachi"><b>&nbspKarachi</b>
+                                <input type="radio" name="too" value="Lahore"><b>&nbspLahore</b>
+                                <input type="radio" name="too" value="Islamabad"><b>&nbspislamabad</b>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="row form-group">
+                            <label for="seats" class="col-12 col-md-4 col-form-label"><b>How many seats would you like
+                                    to reserve?</b></label>
+                            <div class="col-10  col-md-8">
+                                <input type="radio" name="nSeats" value="1"><b>&nbsp1</b>
+                                <input type="radio" name="nSeats" value="2"><b>&nbsp2</b>
+                                <input type="radio" name="nSeats" value="3"><b>&nbsp3</b>
+                                <input type="radio" name="nSeats" value="4"><b>&nbsp4</b>
+                                <input type="radio" name="nSeats" value="5"><b>&nbsp5</b>
+                                <input type="radio" name="nSeats" value="6"><b>&nbsp6</b>
+
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="seats" class="col-12 col-md-4 col-form-label"><b>Section</b></label>
+                            <div class="col-10 col-md-8">
+                                <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                                    <label class="btn btn-secondary active btn-danger">
+                                        <input type="radio" name="options" id="option1" value="firstClass" checked>First
+                                        Class</label>
+                                    <label class="btn btn-secondary btn-success">
+                                        <input type="radio" name="options" value="businessClass" id="option2"> Business
+                                        Class
+                                    </label>
+                                    <label class="btn btn-secondary btn-warning">
+                                        <input type="radio" name="options" value="economyClass" id="option3"> Economy
+                                        Class
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row form-group">
+                            <label for="Date" class="col-12 col-md-4 col-form-label">
+                                <b>Travell Date and Time</b>
+                            </label>
+                            <div class="col-6 col-md-4">
+                                <input type="date" class="form-control " id="Date" name="Date" placeholder="Date">
+                                <!-- <input type="text" class="form-control " id="Date" name="Date" placeholder="Date"> -->
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <input type="time" class="form-control " id="Time" name="Time" placeholder="Time">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class=" offset-md-4 col-md-6">
+                                <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
+
+                                <button type="submit" value="submit" name="save"
+                                    class="btn btn-primary">Reserve</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row row-content">
+            <div class="col">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="img/emraites.png" alt="emraites" width="300"
+                                height="300">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Emraites Airline<span class="badge badge-danger">HOT</span> <span
+                                        class="badge badge-pill badge-default">$200</span></h2>
+                                <p class="d-none d-sm-block">Emirates connects the world to, and through, our global hub
+                                    in Dubai. We operate modern, efficient and comfortable aircraft, and our culturally
+                                    diverse workforce delivers award-winning services to our customers across six
+                                    continents every day.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/qatar.png" alt="promo" width="300" height="300">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Qatar Airline<span class="badge badge-danger">NEW</span></h2>
+                                <p class="d-none d-sm-block">atar Airways today launched its new global brand campaign
+                                    and tagline – Going Places Together – at a press conference in New York, USA. This
+                                    is a new and fresh direction for the airline, which has developed a messaging
+                                    strategy to reflect its evolution as a brand and its role as a leader in the airline
+                                    industry.</p>
+
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/admin.jpg" alt="Abdul Aziz" width="300"
+                                height="300">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Abdul Aziz Khan</h2>
+                                <p class="d-none d-sm-block">I am a student of BS Computer Science in Pakistan's Leading
+                                    IT University. It was always my passion to be a Developer. I've learned a lot so far
+                                    and for its implementation i am here for your service. Being Exceptional in Front
+                                    End Web Development and Web Application Development with React was not enough. now i
+                                    am working on Augmented Reality and making games on that particular Platform. HTML,
+                                    CSS, Jave Scripts,JQuery, and Bootstrap4 are my experties along with React
+                                    Framework.
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
+                    </ol>
+                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span class="fa fa-pause"></span>
+                    </button>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row row-content align-items-center">
+            <div class="col-12 order-sm-last col-sm-4 col-md-3">
+
+                <h3>Going Places Together</h3>
+            </div>
+            <div class="col col-sm order-sm-first col-md">
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/qatar.png" width="150 "
+                        height="150" alt="qatarAirways">
+                    <div class="media-body">
+                        <h2 class="mt-0">Qatar Airways<span class="badge badge-danger">HOT</span><span
+                                class="badge badge-pill badge-secondary">$4.99</span></h2>
+                        <p class="d-none d-sm-block">Qatar Airways today launched its new global brand campaign and
+                            tagline – Going Places Together – at a press conference in New York, USA. This is a new and
+                            fresh direction for the airline, which has developed a messaging strategy to reflect its
+                            evolution as a brand and its role as a leader in the airline industry.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row row-content align-items-center">
+            <div class="col-12 order-sm-first col-sm-4 col-md-3">
+                <h3>Fly Better</h3>
+            </div>
+            <div class="col col-sm order-sm-last col-md">
+                <div class="media">
+                    <img class="d-flex mr-3 order-last img-thumbnail align-self-center" src="img/emraites.png"
+                        width="150 " height="150" alt="emiratesAirways">
+                    <div class="media-body">
+
+                        <h2 class="mt-0">Emirates Airways<span class="badge badge-danger">NEW</span></h2>
+                        <p class="d-none d-md-block"> Emirates connects the world to, and through, our global hub in
+                            Dubai. We operate modern, efficient and comfortable aircraft, and our culturally diverse
+                            workforce delivers award-winning services to our customers across six continents every day.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content align-items-center">
+            <div class="col-12 order-sm-last col-sm-4 col-md-3">
+                <h3>Full-Stack Web Application Developer</h3>
+            </div>
+            <div class="col col-sm order-sm-first col-md">
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/admin.jpg" width="150 "
+                        height="150" alt="Abdul Aziz Khan">
+                    <div class="media-body">
+                        <h2 class="mt-0">Abdul Aziz Khan</h2>
+                        <h4>Freelancer at Fiver.co</h4>
+                        <p class="d-none d-sm-block">I am a student of BS Computer Science in Pakistan's Leading IT
+                            University. It was always my passion to be a Developer. I've learned a lot so far and for
+                            its implementation i am here for your service. Being Exceptional in Front End Web
+                            Development and Web Application Development with React was not enough. now i am working on
+                            Augmented Reality and making games on that particular Platform. HTML, CSS, Jave
+                            Scripts,JQuery, and Bootstrap4 are my experties along with React Framework.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="./aboutus.html">About</a></li>
+                        <li><a href="./admin.html">Admin</a></li>
+                        <li><a href="./contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+                        396i Masjid Road<br>
+                        Sialkot, Cantt<br>
+                        PAKISTAN<br>
+                        <i class="fa fa-phone fa-lg"></i>: +92 3348129506<br>
+                        <i class="fa fa-fax fa-lg"></i>: +92 3348129507<br>
+                        <i class="fa fa-envelope fa-lg"></i>:
+                        <a href="mailto:abdul.aziz.khan.1122@gmail.com">abdul.aziz.khan.1122@gmail.com</a>
+                    </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/abdul.aziz.khan"><i
+                                class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook"
+                            href="http://www.facebook.com/abdulaziz.khan.9040"><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin"
+                            href="http://www.linkedin.com/abdul.aziz.khan.official"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/aziz_4980"><i
+                                class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google"
+                            href="https://www.youtube.com/channel/UCViViYLQ3HwxKOCYm8MCTQw"><i
+                                class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:abdul.aziz.khan.1122@gmail.com"><i
+                                class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>© Copyright 2020 Abdul Aziz Khan</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

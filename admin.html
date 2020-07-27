@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
+    <title>Flight management system</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand"> <a class="navbar-brand mr-auto" href="./index.html"><img src="img/logo.png"
+                        height="30" width="41"></a></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
+                            Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span
+                                class="fa fa-info fa-lg"></span> About</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="./admin.html"><span
+                                class="fa fa-list fa-lg"></span>
+                            Admin</a></li>
+                    <li class="nav-item "><a class="nav-link" href="./contactus.html"><span
+                                class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1>Your Own Flight Management System</h1>
+                    <p>We take inspiration from the World's best airliners and with our experience presents to you the
+                        most reliable flight management system</p>
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <img src="img/logo.png" class="img-fluid">
+
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </header>
+
+    <div class="container align-self-center">
+        <div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item active">Admin</li>
+            </ol>
+
+        </div>
+    </div>
+    <div class="row row-content ">
+
+        <div class="col-12 col-md-5 offset-2">
+            <div>
+                <h3>View All Reservations</h3>
+            </div>
+            <form method="POST" action="retrieve.php">
+                <div class="row form-group">
+
+                    <div class="col-12 col-md-6">
+                        <button type="submit" id="retrieve" value="submit" name="retrieve"
+                            style="height: 150px; width: 100%;" class="btn btn-success " onclick="retrieveBtn()">Click
+                            here to retrieve data! </button>
+
+                    </div>
+                </div>
+
+
+
+            </form>
+
+        </div>
+
+        <div class="col-12 col-md-5 ">
+            <div>
+                <h3>View All User Profiles</h3>
+            </div>
+            <form method="POST" action="user.php">
+                <div class="row form-group">
+
+                    <div class="col-12 col-md-6">
+                        <button type="submit" id="userBtn" value="submit" name="user"
+                            style="height: 150px; width: 100%;" class="btn btn-twitter" onclick="retrieveUsers()">Click
+                            here to retrieve all users </button>
+
+                    </div>
+                </div>
+
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ******************************************************** next row -->
+
+    <div class="row row-content ">
+
+        <div class="col-12 col-md-5 offset-2">
+            <div>
+                <h3>Add a passenger record</h3>
+            </div>
+            <form method="POST" action="addUser.php">
+                <div class="row form-group">
+                    <label for="forEmail" class="clo-12 col-md-4">
+                        <b>Enter Your Email</b>
+                    </label>
+                    <div class="col-12 col-md-5">
+                        <input type="email" class="form-control " id="search" name="email" placeholder="Email">
+                    </div>
+                    <label for="fname" class="clo-12 col-md-4">
+                        <b>Enter First Name</b>
+                    </label>
+                    <div class="col-12 col-md-5">
+                        <input type="text" class="form-control " id="search" name="fname" placeholder="First Name">
+                    </div>
+                    <label for="lname" class="clo-12 col-md-4">
+                        <b>Enter Last Name</b>
+                    </label>
+                    <div class="col-12 col-md-5">
+                        <input type="text" class="form-control " id="search" name="lname" placeholder="Last Name">
+                    </div>
+                    <div class="col-12 col-md-5 ">
+                        <div>
+                            <br>
+                            <button type="submit" id="addUser" value="submit" style="width: 400px;" name="adduser"
+                                class="btn btn-info" onclick="addUser()">Click here to add passenger! </button>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </form>
+
+        </div>
+
+        <div class="col-12 col-md-5">
+            <div>
+                <h3>View All Flight Information</h3>
+            </div>
+            <form method="POST" action="flightInfo.php">
+                <div class="row form-group">
+
+                    <div class="col-12 col-md-6 ">
+                        <button type="submit" id="flightBtn" value="submit" name="flight"
+                            style="height: 150px; width: 100%;" class="btn btn-warning" onclick="retrieveFlights()">Click
+                            here to retrieve all Flight Details! </button>
+
+                    </div>
+                </div>
+
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ****************************************** other row -->
+
+
+    <!-- ************ I have tried Updating the records but it is not working!! -->
+
+
+
+
+    <!-- <div class="row row-content ">
+       
+        <div class="col-12 col-md-5 offset-1">
+            <div >
+                <h3>Update Your Profile Information</h3>
+            </div>
+            <form method="POST" action="profileUpdate.php">
+                <div class="row form-group">
+                    <label for="forEmail" class="clo-12 col-md-4">
+                        <b>Enter Your Present Email</b>
+                    </label>
+                    <div class="col-12 col-md-5">
+                        <input type="email" class="form-control " placeholder="Present Email" id="pemail" name="pemail">
+                        
+                    </div>
+
+                    <label for="forEmail" class="clo-12 col-md-4">
+                        <b>Enter Your New Email</b>
+                    </label>
+                    <div class="col-12 col-md-5">
+                        <input type="email" class="form-control " id="nemail" name="nemail"  placeholder="New Email">
+
+                        
+                    </div>
+
+                    <label for="fname" class="clo-12 col-md-4">
+                        <b>Enter Your New First Name</b>
+                    </label>
+                    <div class="col-12 col-md-5">
+                       <input type="text" class="form-control"  placeholder="First Name"  name="fname">
+                    </div>
+
+                    <label for="lname" class="clo-12 col-md-4">
+                        <b>Enter Your New Last Name</b>
+                    </label>
+                    <div class="col-12 col-md-5">
+                        <input type="text" class="form-control"   placeholder="First Name"name="lname">
+                    </div>
+                    <div class="col-12 ">
+                        <button type="submit" id="searchBtn" value="submit" name="profileUpdate" class="btn btn-primary"
+                            onclick="profileUpdate()">Profile </button>
+                    </div>
+
+
+
+                    
+                        
+
+                </div>
+
+
+
+            </form>
+
+        </div>
+    -->
+    <!--  <div class="col-12 col-md-5 ">
+           
+           
+             <div >
+                <h3>Delete Your Profile</h3>
+            </div>
+            <form method="POST" action="deleteProfile.php">
+                <div class="row form-group">
+                    <label for="forEmail" class="clo-12 col-md-4">
+                        <b>Enter Your Email</b>
+                    </label>
+                    <div class="col-12 col-md-5">
+                        <input type="email" class="form-control " id="delete" name="email">
+                    </div>
+                    <div class="col-12 col-md-1">
+                        <button type="submit" id="deleteBtn" value="submit" name="deleteprofile" class="btn btn-warning"
+                            onclick="deleteProfile()">Delete </button>
+
+                    </div>
+                </div>
+
+
+
+            </form> 
+
+        </div>
+
+    </div>  -->
+
+    <!-- ************************************************* -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./aboutus.html">About</a></li>
+                        <li><a href="#">Admin</a></li>
+                        <li><a href="./contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+                        396i Masjid Road<br>
+                        Sialkot, Cantt<br>
+                        PAKISTAN<br>
+                        <i class="fa fa-phone fa-lg"></i>: +92 3348129506<br>
+                        <i class="fa fa-fax fa-lg"></i>: +92 3348129507<br>
+                        <i class="fa fa-envelope fa-lg"></i>:
+                        <a href="mailto:abdul.aziz.khan.1122@gmail.com">abdul.aziz.khan.1122@gmail.com</a>
+                    </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/abdul.aziz.khan"><i
+                                class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook"
+                            href="http://www.facebook.com/abdulaziz.khan.9040"><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin"
+                            href="http://www.linkedin.com/abdul.aziz.khan.official"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/aziz_4980"><i
+                                class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google"
+                            href="https://www.youtube.com/channel/UCViViYLQ3HwxKOCYm8MCTQw"><i
+                                class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:abdul.aziz.khan.1122@gmail.com"><i
+                                class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>© Copyright 2020 Abdul Aziz Khan</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+    <script>
+        function retrieveBtn() {
+            alert("the Reservation Data will be Retrieved from the Data Base!!");
+        }
+    </script>
+    <script>
+        function retrieveUsers() {
+            alert("All user data will be retrieved!!");
+        }
+    </script>
+    <script>
+        function addUser() {
+            alert("The User will be added to the DataBase!!");
+        }
+    </script>
+    <script>
+        function retrieveFlights() {
+            alert("The Flight Information will be retrieved!!!!");
+        }
+    </script>
+    <script>
+        function profileUpdate() {
+            alert("The Profile against the email will be Updated!!!!");
+        }
+    </script>
+
+</body>
+
+</html>

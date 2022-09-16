@@ -642,9 +642,9 @@
             "optional": true
         },
         "bootstrap": {
-            "version": "4.4.1",
-            "resolved": "https://registry.npm.taobao.org/bootstrap/download/bootstrap-4.4.1.tgz",
-            "integrity": "sha1-hYKWDuoMXNK+3oTYsLrzeJw+iwE="
+            "version": "4.3.1",
+            "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.3.1.tgz",
+            "integrity": "sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag=="
         },
         "bootstrap-social": {
             "version": "5.1.1",
@@ -3645,6 +3645,12 @@
                         "minimatch": "~0.2.11"
                     }
                 },
+                "graceful-fs": {
+                    "version": "1.2.3",
+                    "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-1.2.3.tgz",
+                    "integrity": "sha512-iiTUZ5vZ+2ZV+h71XAgwCSu6+NAizhFU3Yw8aC/hH5SQ3SnISqEqAek40imAFGtDcwJKNhXvSY+hzIolnLwcdQ==",
+                    "dev": true
+                },
                 "inherits": {
                     "version": "1.0.2",
                     "resolved": "https://registry.npm.taobao.org/inherits/download/inherits-1.0.2.tgz",
@@ -4236,6 +4242,15 @@
                         "ordered-read-streams": "^0.1.0",
                         "through2": "^0.6.1",
                         "unique-stream": "^1.0.0"
+                    }
+                },
+                "graceful-fs": {
+                    "version": "3.0.12",
+                    "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-3.0.12.tgz",
+                    "integrity": "sha512-J55gaCS4iTTJfTXIxSVw3EMQckcqkpdRv3IR7gu6sq0+tbC363Zx6KH/SEwXASK9JRbhyZmVjJEVJIOxYsB3Qg==",
+                    "dev": true,
+                    "requires": {
+                        "natives": "^1.1.3"
                     }
                 },
                 "minimatch": {
@@ -6707,6 +6722,12 @@
                 "snapdragon": "^0.8.1",
                 "to-regex": "^3.0.1"
             }
+        },
+        "natives": {
+            "version": "1.1.6",
+            "resolved": "https://registry.npmjs.org/natives/-/natives-1.1.6.tgz",
+            "integrity": "sha512-6+TDFewD4yxY14ptjKaS63GVdtKiES1pTPyxn9Jb0rBqPMZ7VcCiooEhPNsr+mqHtMGxa/5c/HhcC4uPEUw/nA==",
+            "dev": true
         },
         "negotiator": {
             "version": "0.6.2",
